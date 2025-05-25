@@ -20,7 +20,7 @@ const RecentTransactions = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/api/transactions/recent');
+        const res = await axios.get('https://mtka-api.onrender.com/api/transactions/recent');
         setTransactions(res.data || []);
       } catch (error) {
         console.error('Error fetching transactions:', error);

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ReactComponent as LogoDark1 } from "../../../../../public/Milan.png";
+import LogoDark1  from "../../../../../public/Milan.png";
 import { styled } from "@mui/material";
 
 const LinkStyled = styled(Link)(() => ({
