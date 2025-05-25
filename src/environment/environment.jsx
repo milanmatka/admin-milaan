@@ -1,8 +1,8 @@
 const environment = {
     appName: 'Satta Matka App',
     production: false,
-    baseURL: 'http://localhost:5000',
-    apiURL: 'http://localhost:5000/api',
+    baseURL: 'https://mtka-api.onrender.com',
+    apiURL: 'https://mtka-api.onrender.com/api',
     profileUrl: 'https://your-sattamatka-backend.com/storage/images/profile/',
     idle: 30 * 60, // 30 minutes
   
