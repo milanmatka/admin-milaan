@@ -2,8 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import fs from 'fs/promises';
-import svgr from '@svgr/rollup';
-// import svgr from 'vite-plugin-svgr'
+import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,7 +23,7 @@ export default defineConfig({
                     name: 'load-js-files-as-jsx',
                     setup(build) {
                         build.onLoad(
-                            { filter: /src\\.*\.js$/ },
+                            { filter: /src[\\/].*\.js$/ },
                             async (args) => ({
                                 loader: 'jsx',
                                 contents: await fs.readFile(args.path, 'utf8'),
@@ -36,12 +35,6 @@ export default defineConfig({
         },
     },
 
-
-    
-    // plugins: [react(),svgr({
-    //   exportAsDefault: true
-    // })],
-
-    plugins: [svgr(), react()],
+    plugins: [svgr({ exportAsDefault: true }), react()],
     base: '/Modernize-Vite'
 });
